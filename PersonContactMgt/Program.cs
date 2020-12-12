@@ -11,6 +11,7 @@ namespace PersonContactMgt
             Console.WriteLine("**** Welcome To Person Contact Mgt ****");
             AddRecord(listPersonCity);
             RetriveRecord(listPersonCity);
+            CheckTeenage(listPersonCity);
         }
         private static void AddRecord(List<PersonClass> listPersonCity)
         {
@@ -29,6 +30,13 @@ namespace PersonContactMgt
             foreach (PersonClass Person in listPersonCity.FindAll(e => (e.Age < 10)).Take(2).ToList())
             {
                 Console.WriteLine("Name:" + Person.Name + "\tAge:" + Person.Age);
+            }
+        }
+        public static void CheckTeenage(List<PersonClass> listPersonCity)
+        {
+            if (listPersonCity.Any(e => (e.Age >= 13 && e.Age <= 19)))
+            {
+                Console.WriteLine("Yes, We Have Some Tenneger ");
             }
         }
     }
