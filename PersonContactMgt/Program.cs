@@ -10,6 +10,7 @@ namespace PersonContactMgt
             List<PersonClass> listPersonCity = new List<PersonClass>();
             Console.WriteLine("**** Welcome To Person Contact Mgt ****");
             AddRecord(listPersonCity);
+            RetriveRecord(listPersonCity);
         }
         private static void AddRecord(List<PersonClass> listPersonCity)
         {
@@ -22,6 +23,13 @@ namespace PersonContactMgt
             listPersonCity.Add(new PersonClass("45553", "Rehan", "Warali Mumbai", 22));
             listPersonCity.Add(new PersonClass("88987", "Sumit", "112 main street Latur", 18));
             Console.WriteLine();
+        }
+        public static void RetriveRecord(List<PersonClass>listPersonCity)
+        {
+            foreach (PersonClass Person in listPersonCity.FindAll(e => (e.Age < 10)).Take(2).ToList())
+            {
+                Console.WriteLine("Name:" + Person.Name + "\tAge:" + Person.Age);
+            }
         }
     }
 }
