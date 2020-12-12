@@ -8,7 +8,7 @@ namespace PersonContactMgt
         static void Main(string[] args)
         {
             List<PersonClass> listPersonCity = new List<PersonClass>();
-            Console.WriteLine("*********** Welcome To Person Contact Mgt ***********");
+            Console.WriteLine("**** Welcome To Person Contact Mgt ****");
         }
     }
 }
